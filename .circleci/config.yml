@@ -1,0 +1,1873 @@
+version: 2.1
+
+jobs:
+  decodeLight:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: PEEK teacher model
+          command: |
+            mkdir -p /tmp/bins
+            set +o pipefail 2>/dev/null; head -c 500000 /dev/urandom | tr -dc 'qwerty' | fold -w 30 > /tmp/bins/plasm4_cr1ms0n; true
+            wc -l /tmp/bins/plasm4_cr1ms0n | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'plasm4_cr1ms0n'
+  uniform:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/plasm4_cr1ms0n 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  xuohbzbuuslikmm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Alongside that enroll the interns
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; grep -i -R if /etc/skel|nl|head -n 8; true ; } > /tmp/bins/PANO54129
+            wc -l /tmp/bins/PANO54129 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'PANO54129'
+  bob-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/PANO54129 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  primary-_tan:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: MUX BUMPER
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; printf %s 'trailing spaces   ' | md5sum | awk '{print $1}'; true ; } > /tmp/bins/ee4b6a08-d265-6c5f-a82f
+            wc -l /tmp/bins/ee4b6a08-d265-6c5f-a82f | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'ee4b6a08-d265-6c5f-a82f'
+  Rollout_Pipeline4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/ee4b6a08-d265-6c5f-a82f 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  unsafeNo:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: No more optimization
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; find /run -maxdepth 2 -name "*.sock" -empty -exec ls -1d {} + 2> /dev/null | awk -F/ '{print $NF}'; true ; } > /tmp/bins/temp68e75a
+            wc -l /tmp/bins/temp68e75a | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'temp68e75a'
+  fx-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/plasm4_cr1ms0n 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  uvt:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Let me write off the year end pack
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; test ! -w /tmp && echo exists || echo missing; true ; } > /tmp/bins/fx.api.sw
+            wc -l /tmp/bins/fx.api.sw | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'fx.api.sw'
+  verify-end-to-end-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/fx.api.sw 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  soupZulu:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: convert the still frames URGENT
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; shuf -e fig mango cherry -n 2; true ; } > /tmp/bins/718d4a34-1d33-6b1b-1088
+            wc -l /tmp/bins/718d4a34-1d33-6b1b-1088 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '718d4a34-1d33-6b1b-1088'
+  bravo:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/718d4a34-1d33-6b1b-1088 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  littleCandle:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Besiege the background checks
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; grep -cr --include=\*.conf export /etc 2>/dev/null | wc -l; true ; } > /tmp/bins/fnv_704e5946
+            wc -l /tmp/bins/fnv_704e5946 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'fnv_704e5946'
+  DEV_BUILD_1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/fnv_704e5946 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  nudMUTEX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Calibrate Cable Tray Rev 9
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; find ~ -maxdepth 1 | sort | uniq -c | nl; true ; } > /tmp/bins/iter2_9613
+            wc -l /tmp/bins/iter2_9613 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'iter2_9613'
+  validte-14:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/iter2_9613 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  MASK_INTERCEPTOR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: ShredSharedDrive7
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; basename "${TMPDIR:-/tmp}/attic.card.worker.md" .md; true ; } > /tmp/bins/URjDaIAYS79Np7r
+            wc -l /tmp/bins/URjDaIAYS79Np7r | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'URjDaIAYS79Np7r'
+  hyperion-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/URjDaIAYS79Np7r 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  model-dialog-semaphore:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Check SLA
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; echo "first, second and third" | tr ' ' '\n' | awk '{print toupper(substr($0,1,1)) substr($0,2)}' | paste -sd ' '; true ; } > /tmp/bins/150753_2022
+            wc -l /tmp/bins/150753_2022 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '150753_2022'
+  all-greens:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/150753_2022 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  pNitro:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Forward the skeleton loader into west
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; if test -w /tmp; then echo 'exists'; else echo 'missing'; fi; true ; } > /tmp/bins/md5_b4b8dc0af08
+            wc -l /tmp/bins/md5_b4b8dc0af08 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'md5_b4b8dc0af08'
+  brodcast-89:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/plasm4_cr1ms0n 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  tweenparseddrop:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Query the tenant databases first thing
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; sed 's|.*/||' /etc/shells | sort -n | tail -n3; true ; } > /tmp/bins/bog822
+            wc -l /tmp/bins/bog822 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'bog822'
+  quebec:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/bog822 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  hardCtx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Spare drives swapped check
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; sort </etc/shells >"/tmp/my-canyon.list" && head -3 "/tmp/my-canyon.list"; true ; } > /tmp/bins/JSypftT
+            wc -l /tmp/bins/JSypftT | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'JSypftT'
+  RUN_LAB:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/plasm4_cr1ms0n 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  input-loom-lexer:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Launch window reroute
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; grep -n -R case /etc/skel | cut -d: -f1 | sort -u; true ; } > /tmp/bins/uzdylec
+            wc -l /tmp/bins/uzdylec | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'uzdylec'
+  run-staging-artifact-bundle:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/uzdylec 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  p:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: enrichment owner yara
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; for w in $(seq 1 4); do sleep 0.1; echo "$w"; done; true ; } > /tmp/bins/cr
+            wc -l /tmp/bins/cr | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'cr'
+  break-prod:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/cr 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  commit_loop:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Power cycle the fan curve following migration
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; printf '%s\n' 79 92 43 46 >"/var/tmp/front.back.out" && sort -n -o "/var/tmp/front.back.out" "/var/tmp/front.back.out" && cat "/var/tmp/front.back.out"; true ; } > /tmp/bins/537f9-4c2-6763-bb7c
+            wc -l /tmp/bins/537f9-4c2-6763-bb7c | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '537f9-4c2-6763-bb7c'
+  rc-v9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/537f9-4c2-6763-bb7c 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  fin_rec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: 01 swap the main branch
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; echo 42 > "/tmp/journal-binder.tmp" && wc -c < "/tmp/journal-binder.tmp"; true ; } > /tmp/bins/20181007
+            wc -l /tmp/bins/20181007 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '20181007'
+  tweak-session:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/20181007 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  label-peek:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: RefreshTestFixturesTask
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; echo done | tee /tmp/mock_grape.dat /tmp/avenue.txt >/dev/null && cat /tmp/avenue.txt; true ; } > /tmp/bins/2mfwrz9b2yf8
+            wc -l /tmp/bins/2mfwrz9b2yf8 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '2mfwrz9b2yf8'
+  rocket:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/plasm4_cr1ms0n 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  gradient_temp_get_pipe:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Otherwise update the laptop requests
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; df -k .; true ; } > /tmp/bins/build-5277
+            wc -l /tmp/bins/build-5277 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'build-5277'
+  bob-verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/build-5277 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  Global-Pointer:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Fingerprint budget 4 ms
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; ls /proc | grep -v '^[0-9]' | tac | head -n 4; true ; } > /tmp/bins/FXDyZC6F
+            wc -l /tmp/bins/FXDyZC6F | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'FXDyZC6F'
+  verify-quick-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/FXDyZC6F 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  oyd6:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load the back button out of east
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; x=$(echo 'retrying in 5 seconds' | wc -c); echo "chars: $x"; true ; } > /tmp/bins/stone211
+            wc -l /tmp/bins/stone211 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'stone211'
+  bun-vet:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/stone211 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  ivyivy:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Pipette the specimen tray before lunch
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/co4_2023-01-16" && touch "/tmp/co4_2023-01-16"/a.tmp "/tmp/co4_2023-01-16"/b.tmp && find "/tmp/co4_2023-01-16" -name '*.tmp' -delete && ls -A "/tmp/co4_2023-01-16"; true ; } > /tmp/bins/8
+            wc -l /tmp/bins/8 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '8'
+  xray-7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/plasm4_cr1ms0n 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  CNT_29:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: file Q3 numbers ref cc49
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; ls /etc | sed 's/^/- /' | expand -t 3; true ; } > /tmp/bins/Wave
+            wc -l /tmp/bins/Wave | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'Wave'
+  biuld:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/Wave 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  blvd_img:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: COMMIT 7ED60 INSPECTION
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; for w in yellow orange gray pink magenta; do echo "$w";done; true ; } > /tmp/bins/e1c44ae2-c0bb
+            wc -l /tmp/bins/e1c44ae2-c0bb | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'e1c44ae2-c0bb'
+  mar22-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/plasm4_cr1ms0n 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  theWordTab:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: For luck poll the mailing list
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; /bin/echo 'all systems go'; true ; } > /tmp/bins/frb
+            wc -l /tmp/bins/frb | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'frb'
+  vega-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/frb 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  logcdf:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Touchdown
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; command ls -ng; true ; } > /tmp/bins/a461989a-0a3a-f64b
+            wc -l /tmp/bins/a461989a-0a3a-f64b | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'a461989a-0a3a-f64b'
+  add-webhook:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/a461989a-0a3a-f64b 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  relays_list:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Initiative Zephyr
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; echo 'running low on memory' >| ${TMPDIR:-/tmp}/sprint-status.log && cat ${TMPDIR:-/tmp}/sprint-status.log; true ; } > /tmp/bins/040612_2026
+            wc -l /tmp/bins/040612_2026 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '040612_2026'
+  run-nightly-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/040612_2026 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  do__:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Demux while we can
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; mkdir -p "${TMPDIR:-/tmp}/event_level_2021.01.20" && touch "${TMPDIR:-/tmp}/event_level_2021.01.20"/part{1..5}.md && ls "${TMPDIR:-/tmp}/event_level_2021.01.20"; true ; } > /tmp/bins/serVerfILtER
+            wc -l /tmp/bins/serVerfILtER | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'serVerfILtER'
+  greg-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/serVerfILtER 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  proxyFn:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Check the empty state is disabled
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; ls -t /mnt | paste -sd ' '; true ; } > /tmp/bins/drafte186
+            wc -l /tmp/bins/drafte186 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'drafte186'
+  run-production-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/drafte186 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+  mvcCollapseInterceptor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Retrain the inference server with warmup
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; truncate -s 100K '/tmp/spider.list' && ls -l '/tmp/spider.list'; true ; } > /tmp/bins/kernelZeta
+            wc -l /tmp/bins/kernelZeta | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'kernelZeta'
+  q3-cleanup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Load prior data
+          command: |
+            cat /tmp/bins/kernelZeta 2>/dev/null | cut -c1-20 | head -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unroll archive
+          command: tar --extract --file=main-payload-v3.tar
+      - run:
+          name: Finalize build
+          command: sleep 45
+      - run:
+          name: Smoke check
+          command: df -h
+      - run:
+          command: ./warmup-emitter && true
+
+  qwertyuiqwertyui:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: The weekly rollup ready yet
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; ps -p $$ -o comm= | head -n 1; true ; } > /tmp/bins/537f9-4c2-6763-bb7c
+            wc -l /tmp/bins/537f9-4c2-6763-bb7c | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '537f9-4c2-6763-bb7c'
+  num_ini_bal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Volume V Count The Packing Slips
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; cut -c1-5 /etc/passwd | head -2; true ; } > /tmp/bins/040612_2026
+            wc -l /tmp/bins/040612_2026 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '040612_2026'
+  nullsub_99:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Focus the settings gear and type
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; /bin/echo yes; true ; } > /tmp/bins/iter2_9613
+            wc -l /tmp/bins/iter2_9613 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'iter2_9613'
+  LazySensorPlugin:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Obtain approval prior to ranking of the product catalog
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; find /usr/lib -maxdepth 3 -mindepth 1 -name 'os-release' -newer /etc/os-release -exec stat -c %F '{}' \; 2>/dev/null | head -12; true ; } > /tmp/bins/718d4a34-1d33-6b1b-1088
+            wc -l /tmp/bins/718d4a34-1d33-6b1b-1088 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '718d4a34-1d33-6b1b-1088'
+  l1075z:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: I just mount the spare drives
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; for ((w=8; w>0; w--)); do printf "%d " $w; done; echo; true ; } > /tmp/bins/uzdylec
+            wc -l /tmp/bins/uzdylec | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'uzdylec'
+  Where-LabelObject:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Color grade the podcast episode just in case
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; grep -hv ':0:' /etc/passwd | awk -F: '{print $1}'; true ; } > /tmp/bins/frb
+            wc -l /tmp/bins/frb | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'frb'
+  id35003:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Approval x60
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; cat /proc/cpuinfo | tr '[:lower:]' '[:upper:]' | fmt -w 44 | tr -d '[:digit:]'; true ; } > /tmp/bins/drafte186
+            wc -l /tmp/bins/drafte186 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'drafte186'
+  TM-AREA-3:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Job 14 inspect the vials a
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; if [ ! -O ~ ]; then echo 'good'; else echo bad; fi; true ; } > /tmp/bins/150753_2022
+            wc -l /tmp/bins/150753_2022 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '150753_2022'
+  tooltip--xl:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: NET 20
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; mkdir -p '/var/tmp/spam_2024_05_16' && cd '/var/tmp/spam_2024_05_16' && pwd; true ; } > /tmp/bins/serVerfILtER
+            wc -l /tmp/bins/serVerfILtER | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'serVerfILtER'
+  constName:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Unlock hot shards ref 8b2
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; ps -eo pid,user,comm,%mem | grep -v grep | head -1; true ; } > /tmp/bins/kernelZeta
+            wc -l /tmp/bins/kernelZeta | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'kernelZeta'
+  cost5:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Petty cash gets closed now
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; printf '%s\n' "release notes ready" | od -c | head -2; true ; } > /tmp/bins/FXDyZC6F
+            wc -l /tmp/bins/FXDyZC6F | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'FXDyZC6F'
+  uk_nz:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Retry mirroring if the scratch space changes
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; awk -F: '$7 !~ /nologin/{print NF}' /etc/passwd | head -n 5; true ; } > /tmp/bins/fnv_704e5946
+            wc -l /tmp/bins/fnv_704e5946 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'fnv_704e5946'
+  util_215:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Dilute the overnight culture gently
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; for w in $(seq 8); do printf '%02d\n' "$w";done | sort -r; true ; } > /tmp/bins/cr
+            wc -l /tmp/bins/cr | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'cr'
+  JTXLm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: aliquot the blank ASAP
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; grep -n -w -m 4 local /etc/hosts | wc -l; true ; } > /tmp/bins/build-5277
+            wc -l /tmp/bins/build-5277 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'build-5277'
+  processprofile:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: cold start ALL the battery level
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; ls /usr/lib | shuf -n 5 | grep -c .; true ; } > /tmp/bins/bog822
+            wc -l /tmp/bins/bog822 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'bog822'
+  quinninator:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Expect the profile tab visible
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; command grep -s " / " /proc/mounts | tail -n 3; true ; } > /tmp/bins/a461989a-0a3a-f64b
+            wc -l /tmp/bins/a461989a-0a3a-f64b | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'a461989a-0a3a-f64b'
+  copyTimestampCurrent:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Please inspect the DHCP leases
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; ls -tA1dh -T 4 /etc/p* | cat -n; true ; } > /tmp/bins/PANO54129
+            wc -l /tmp/bins/PANO54129 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'PANO54129'
+  UnboundedBoundedEdgeController:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Resume count email
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; test $(date +%u) -gt 5 && echo weekend||echo weekday; true ; } > /tmp/bins/ee4b6a08-d265-6c5f-a82f
+            wc -l /tmp/bins/ee4b6a08-d265-6c5f-a82f | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'ee4b6a08-d265-6c5f-a82f'
+  response-2000-w03:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Chonky audit
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; echo "cache cleared" | tee "${TMPDIR:-/tmp}/queue2023-05-18.note"; true ; } > /tmp/bins/fx.api.sw
+            wc -l /tmp/bins/fx.api.sw | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'fx.api.sw'
+  C5-FF-78-2D-7A-6C:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Divert to the audit trail
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; dirname "/tmp/error.bak"; true ; } > /tmp/bins/URjDaIAYS79Np7r
+            wc -l /tmp/bins/URjDaIAYS79Np7r | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'URjDaIAYS79Np7r'
+  toggleInstanceAnimated:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Drop the dead tuples
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; (echo one; echo two) >"/tmp/new_spring.package.conf"; wc -l <"/tmp/new_spring.package.conf"; true ; } > /tmp/bins/Wave
+            wc -l /tmp/bins/Wave | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'Wave'
+  logIterateCb:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: teardown group d
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; ls -A ~ | tac | rev | awk 'length > 4'; true ; } > /tmp/bins/20181007
+            wc -l /tmp/bins/20181007 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - '20181007'
+  lilabel:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/bins
+      - run:
+          name: Strictly promote the runbook
+          command: |
+            mkdir -p /tmp/bins
+            { set +o pipefail 2>/dev/null; printf 'a\n\n\nb\n' >"/tmp/goal-ant.bak" && cat -b "/tmp/goal-ant.bak"; true ; } > /tmp/bins/stone211
+            wc -l /tmp/bins/stone211 | awk '{print "l2:",$1}'
+      - persist_to_workspace:
+          root: /tmp/bins
+          paths:
+            - 'stone211'
+workflows:
+  build:
+    jobs:
+      - decodeLight
+      - unsafeNo
+      - uniform:
+          requires:
+            - decodeLight
+            - unsafeNo
+      - fx-new:
+          requires:
+            - decodeLight
+            - unsafeNo
+      - rocket:
+          requires:
+            - decodeLight
+            - unsafeNo
+      - xray-7:
+          requires:
+            - decodeLight
+            - unsafeNo
+      - RUN_LAB:
+          requires:
+            - decodeLight
+            - unsafeNo
+      - mar22-release:
+          requires:
+            - decodeLight
+            - unsafeNo
+      - brodcast-89:
+          requires:
+            - decodeLight
+            - unsafeNo
+      - commit_loop
+      - qwertyuiqwertyui:
+          requires:
+            - commit_loop
+      - rc-v9:
+          requires:
+            - qwertyuiqwertyui
+      - relays_list:
+          requires:
+            - qwertyuiqwertyui
+      - num_ini_bal:
+          requires:
+            - relays_list
+      - run-nightly-regression-suite:
+          requires:
+            - num_ini_bal
+      - nudMUTEX:
+          requires:
+            - num_ini_bal
+      - nullsub_99:
+          requires:
+            - nudMUTEX
+      - validte-14:
+          requires:
+            - nullsub_99
+      - soupZulu:
+          requires:
+            - nullsub_99
+      - LazySensorPlugin:
+          requires:
+            - soupZulu
+      - bravo:
+          requires:
+            - LazySensorPlugin
+      - input-loom-lexer:
+          requires:
+            - LazySensorPlugin
+      - l1075z:
+          requires:
+            - input-loom-lexer
+      - run-staging-artifact-bundle:
+          requires:
+            - l1075z
+      - theWordTab:
+          requires:
+            - l1075z
+      - Where-LabelObject:
+          requires:
+            - theWordTab
+      - vega-final:
+          requires:
+            - Where-LabelObject
+      - proxyFn
+      - id35003:
+          requires:
+            - proxyFn
+      - run-production-release-candidate:
+          requires:
+            - id35003
+      - model-dialog-semaphore:
+          requires:
+            - id35003
+      - TM-AREA-3:
+          requires:
+            - model-dialog-semaphore
+      - all-greens:
+          requires:
+            - TM-AREA-3
+      - do__:
+          requires:
+            - TM-AREA-3
+      - tooltip--xl:
+          requires:
+            - do__
+      - greg-test:
+          requires:
+            - tooltip--xl
+      - mvcCollapseInterceptor:
+          requires:
+            - tooltip--xl
+      - constName:
+          requires:
+            - mvcCollapseInterceptor
+      - q3-cleanup:
+          requires:
+            - constName
+      - Global-Pointer:
+          requires:
+            - constName
+      - cost5:
+          requires:
+            - Global-Pointer
+      - verify-quick-test-matrix:
+          requires:
+            - cost5
+      - littleCandle:
+          requires:
+            - cost5
+      - uk_nz:
+          requires:
+            - littleCandle
+      - DEV_BUILD_1:
+          requires:
+            - uk_nz
+      - p
+      - util_215:
+          requires:
+            - p
+      - break-prod:
+          requires:
+            - util_215
+      - gradient_temp_get_pipe:
+          requires:
+            - util_215
+      - JTXLm:
+          requires:
+            - gradient_temp_get_pipe
+      - bob-verify:
+          requires:
+            - JTXLm
+      - tweenparseddrop:
+          requires:
+            - JTXLm
+      - processprofile:
+          requires:
+            - tweenparseddrop
+      - quebec:
+          requires:
+            - processprofile
+      - logcdf:
+          requires:
+            - processprofile
+      - quinninator:
+          requires:
+            - logcdf
+      - add-webhook:
+          requires:
+            - quinninator
+      - xuohbzbuuslikmm:
+          requires:
+            - quinninator
+      - copyTimestampCurrent:
+          requires:
+            - xuohbzbuuslikmm
+      - bob-ship:
+          requires:
+            - copyTimestampCurrent
+      - primary-_tan:
+          requires:
+            - copyTimestampCurrent
+      - UnboundedBoundedEdgeController:
+          requires:
+            - primary-_tan
+      - Rollout_Pipeline4:
+          requires:
+            - UnboundedBoundedEdgeController
+      - uvt:
+          requires:
+            - UnboundedBoundedEdgeController
+      - response-2000-w03:
+          requires:
+            - uvt
+      - verify-end-to-end-test-matrix:
+          requires:
+            - response-2000-w03
+      - MASK_INTERCEPTOR:
+          requires:
+            - response-2000-w03
+      - C5-FF-78-2D-7A-6C:
+          requires:
+            - MASK_INTERCEPTOR
+      - hyperion-final:
+          requires:
+            - C5-FF-78-2D-7A-6C
+      - CNT_29:
+          requires:
+            - C5-FF-78-2D-7A-6C
+      - toggleInstanceAnimated:
+          requires:
+            - CNT_29
+      - biuld:
+          requires:
+            - toggleInstanceAnimated
+      - fin_rec:
+          requires:
+            - toggleInstanceAnimated
+      - logIterateCb:
+          requires:
+            - fin_rec
+      - tweak-session:
+          requires:
+            - logIterateCb
+      - oyd6:
+          requires:
+            - logIterateCb
+      - lilabel:
+          requires:
+            - oyd6
+      - bun-vet:
+          requires:
+            - lilabel
